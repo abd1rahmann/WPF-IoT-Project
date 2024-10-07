@@ -1,0 +1,70 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net8.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <UseWPF>true</UseWPF>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Resources\Fonts\fa-brands-400.ttf" />
+    <None Remove="Resources\Fonts\fa-regular-400.ttf" />
+    <None Remove="Resources\Fonts\fa-solid-900.ttf" />
+    <None Remove="Resources\Fonts\fa-v4compatibility.ttf" />
+    <None Remove="Resources\Fonts\Poppins-Black.ttf" />
+    <None Remove="Resources\Fonts\Poppins-Bold.ttf" />
+    <None Remove="Resources\Fonts\Poppins-ExtraBold.ttf" />
+    <None Remove="Resources\Fonts\Poppins-ExtraLight.ttf" />
+    <None Remove="Resources\Fonts\Poppins-Light.ttf" />
+    <None Remove="Resources\Fonts\Poppins-Medium.ttf" />
+    <None Remove="Resources\Fonts\Poppins-Regular.ttf" />
+    <None Remove="Resources\Fonts\Poppins-SemiBold.ttf" />
+    <None Remove="Resources\Fonts\Poppins-Thin.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Resources\Fonts\fa-brands-400.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\fa-regular-400.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\fa-solid-900.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\fa-v4compatibility.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Poppins-Black.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Poppins-Bold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Poppins-ExtraBold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Poppins-ExtraLight.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Poppins-Medium.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Poppins-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Poppins-SemiBold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resources\Fonts\Poppins-Thin.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="MVVM\Views\" />
+  </ItemGroup>
+
+</Project>

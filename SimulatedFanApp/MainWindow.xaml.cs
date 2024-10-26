@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using SimulatedFanApp.MVVM.Views;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -44,5 +45,14 @@ namespace SimulatedFanApp
             else
                 sb.Storyboard.Stop();
         }
+
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var settings = new SettingsView(); 
+            this.Content = settings;
+        }
+
+        
+
     }
 }

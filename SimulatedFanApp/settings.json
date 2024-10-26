@@ -1,0 +1,4 @@
+﻿{
+  "ConnectionString": "HostName=elmi-iothub.azure-devices.net;DeviceId=FanSimulatorID;SharedAccessKey=bauWpwRPZ6zSVd+0UlZ+6c4RdrqwQ6oVpettR+1jIw4=",
+  "DeviceId": "FanSiumalatorID"
+}

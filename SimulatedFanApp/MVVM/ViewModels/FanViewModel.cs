@@ -19,7 +19,6 @@ namespace SimulatedFanApp.MVVM.ViewModels
             {
                 fanModel.IsRunning = value;
                 OnPropertyChanged(nameof(IsRunning));
-                // Rapportera det aktuella tillståndet till device twin
                 ReportFanStatusAsync(fanModel.IsRunning ? "On" : "Off");
             }
         }
@@ -42,43 +41,35 @@ namespace SimulatedFanApp.MVVM.ViewModels
                 throw new ArgumentNullException("Connection string or device ID cannot be null.");
             }
 
-            // Skapa IoT Hub-anslutningen med din connection string
             deviceClient = DeviceClient.CreateFromConnectionString(connectionString, TransportType.Mqtt);
 
             fanModel = new FanModel(connectionString, deviceId);
 
-            // Sätt callback för att lyssna på device twin-uppdateringar
             InitializeDeviceClientAsync();
 
-            // Skapa ett kommando och bind metoden ToggleFan
             ToggleFanCommand = new RelayCommand(async (obj) => await ToggleFanAsync());
             
         }
 
-        // Asynkron metod för att slå på/stänga av fläkten
         private async Task ToggleFanAsync()
         {
             if (IsRunning)
             {
-                await fanModel.StopFanAsync();  // Gör StopFan asynkron
+                await fanModel.StopFanAsync(); 
             }
             else
             {
-                await fanModel.StartFanAsync();  // Gör StartFan asynkron
+                await fanModel.StartFanAsync();  n
             }
 
-            // Meddela att IsRunning har ändrats
             OnPropertyChanged(nameof(IsRunning));
         }
 
-        // Asynkron metod för att hantera uppdateringar från device twin
         private async Task InitializeDeviceClientAsync()
         {
-            // Callback för när desired properties uppdateras i device twin
             await deviceClient.SetDesiredPropertyUpdateCallbackAsync(OnDesiredPropertyChanged, null);
         }
 
-        // Callback-metod för att hantera ändringar av desired properties
         private Task OnDesiredPropertyChanged(TwinCollection desiredProperties, object userContext)
         {
             if (desiredProperties.Contains("FanStatus"))
@@ -86,7 +77,6 @@ namespace SimulatedFanApp.MVVM.ViewModels
                 string fanStatus = desiredProperties["FanStatus"];
                 Console.WriteLine($"Desired FanStatus: {fanStatus}");
 
-                // Uppdatera fläktens tillstånd baserat på det önskade tillståndet
                 if (fanStatus == "On")
                 {
                     TurnOnFan();
@@ -100,19 +90,16 @@ namespace SimulatedFanApp.MVVM.ViewModels
             return Task.CompletedTask;
         }
 
-        // Metod för att slå på fläkten
         private void TurnOnFan()
         {
             IsRunning = true;
         }
 
-        // Metod för att stänga av fläkten
         private void TurnOffFan()
         {
             IsRunning = false;
         }
 
-        // Asynkron metod för att rapportera fläktens status till device twin
         private async Task ReportFanStatusAsync(string fanStatus)
         {
             var reportedProperties = new TwinCollection();

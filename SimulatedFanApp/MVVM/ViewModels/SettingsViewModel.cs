@@ -45,12 +45,10 @@ public class SettingsViewModel : ViewModelBase
 
     public SettingsViewModel()
     {
-        // Läs inställningar från app.config
         _connectionString = ConfigurationManager.AppSettings["IoTHubConnectionString"];
         _deviceId = ConfigurationManager.AppSettings["DeviceId"];
-        _autoShutoffTime = "30 minuter"; // Standardvärde
+        _autoShutoffTime = "30 minuter";
 
-        // Skapa kommandon
         SaveSettingsCommand = new RelayCommand(SaveSettings);
         SaveAutoShutoffTimeCommand = new RelayCommand(SaveAutoShutoffTime);
     }

@@ -59,7 +59,7 @@ namespace SimulatedFanApp.MVVM.ViewModels
             }
             else
             {
-                await fanModel.StartFanAsync();  n
+                await fanModel.StartFanAsync();  
             }
 
             OnPropertyChanged(nameof(IsRunning));

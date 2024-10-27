@@ -25,9 +25,9 @@
                     <TextBox Text="{Binding ConnectionString}" Width="300" BorderBrush="Transparent" Margin="0" Padding="5"/>
                 </Border>
 
-                    <TextBlock Text="Anslutningssträng (IoT Hub Connection String)" FontSize="14"/>
+                    <TextBlock Text="ID (IoT Hub ID)" FontSize="14"/>
                     <Border CornerRadius="10" BorderBrush="Gray" BorderThickness="1" Background="White">
-                        <TextBox Text="{Binding DeviceId}" Width="300" Margin="0" Padding="5"/>
+                    <TextBox Text="{Binding DeviceId}" Width="300" Margin="0" BorderBrush="Transparent" Padding="5"/>
                     </Border>
 
 
@@ -38,12 +38,12 @@
                     <ComboBoxItem Content="2 timmar" />
                 </ComboBox>
 
-                <Button Content="Spara inställningar"  Command="{Binding SaveSettingsCommand}" Width="200" Margin="0 20 0 0" />
-                <Button Content="Spara timer" Command="{Binding SaveAutoShutoffTimeCommand}" Width="200" Margin="0 20 0 0"/>
-                <Button Grid.Row="5"  Content="&#xf863;"  Click="Button_Click" Style="{StaticResource fanButton}"   Height="40" HorizontalAlignment="Center" Margin="10 200"/>
+                <Button Content="Spara inställningar" Click="Button_Click_2" Command="{Binding SaveSettingsCommand}" Style="{StaticResource RoundedButtonStyle}" Width="200" Margin="0 20 0 0" />
+                <Button Content="Spara timer" Click="Button_Click_1" Command="{Binding SaveAutoShutoffTimeCommand}" Style="{StaticResource RoundedButtonStyle}"  Width="200" Margin="0 20 0 0"/>
+                <Button Grid.Row="5"  Content="&#xf863;"  Click="Button_Click" Style="{StaticResource fanButton}"   Height="35" Width="40" HorizontalAlignment="Center" Margin="10 200 30 0"/>
                 
 
-            </StackPanel>
+            </StackPanel>   
         </Grid>
     </Border>
 

@@ -24,6 +24,7 @@ namespace SimulatedFanApp.MVVM.Views
         public SettingsView()
         {
             InitializeComponent();
+            DataContext = new SettingsViewModel();
 
         }
 
@@ -51,8 +52,17 @@ namespace SimulatedFanApp.MVVM.Views
                 window.DragMove();
             }
         }
-     
 
-       
+        private void Button_Click_1(object sender, RoutedEventArgs e)
+        {
+            var save = new SettingsViewModel();
+            save.SaveSettingsCommand.Execute(this);
+        }
+
+        private void Button_Click_2(object sender, RoutedEventArgs e)
+        {
+            var save = new SettingsViewModel();
+            save.SaveAutoShutoffTimeCommand.Execute(this);
+        }
     }
 }
